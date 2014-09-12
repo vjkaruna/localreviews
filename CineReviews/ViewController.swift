@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -35,20 +36,32 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func requestAPIData() {
         
+        
+        
         var url: String = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=mkwnbrc7g34k64vpq96nshc9"
-        var url2: String = "http://www.cnn.com"
         
-        var request = NSMutableURLRequest(URL: NSURL(string: url))
-        request.setValue("*/*",forHTTPHeaderField:"Accept")
-        request.HTTPMethod = "GET"
-        request.setValue("curl/7.37.1", forHTTPHeaderField:"User-Agent")
+        /* Port of the Obj-C example from @sandofsy -
+            switched to the Alamofire code below
         
-        println("\(request)")
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            println("\(error)")
-            var object: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0) , error: nil)
-            println("\(object)")
-            })
+            var request = NSMutableURLRequest(URL: NSURL(string: url))
+            request.setValue("application/json",forHTTPHeaderField:"Accept")
+            request.HTTPMethod = "GET"
+            request.setValue("curl/7.37.1", forHTTPHeaderField:"User-Agent")
+        
+            println("\(request)")
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                println("\(error)")
+                var object: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0) , error: nil)
+                println("\(object)")
+                })
+        
+        */
+        
+        Alamofire.request(.GET, url, encoding: .JSON).response { (request, response, data, error) in
+        }
+        
+        
+        
     }
     
 }
