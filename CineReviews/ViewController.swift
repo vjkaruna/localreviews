@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
@@ -57,7 +58,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         */
         
-        Alamofire.request(.GET, url, encoding: .JSON).response { (request, response, data, error) in
+        Alamofire.request(.GET, url).responseJSON { (request, response, data, error) in
+            if (error != nil) {
+                println("TODO: handle error")
+            }
+            
+            let JSON = JSONValue(data as AnyObject!)
+            let movie_title = JSON["movies"][0]["title"]
+            println("\(movie_title)")
+            
         }
         
         
