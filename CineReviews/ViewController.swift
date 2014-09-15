@@ -48,6 +48,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "pushMovieDetail") {
+            let dvc = segue.destinationViewController as DetailViewController
+            let sourcerow = self.movieTableView.indexPathForSelectedRow()?.row
+            if (sourcerow != nil) {
+                dvc.movie = movies[sourcerow!]
+            }
+        }
+    }
+    
     func requestAPIData() {
         
         
