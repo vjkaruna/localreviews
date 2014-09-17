@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DAA726FEBDE4C50916E61A6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF9B6DA08924C01A7FB89CC /* libPods.a */; };
-		66344C7219C6263500DAB27B /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66344C7119C6263500DAB27B /* Movies.swift */; };
+		66344C7219C6263500DAB27B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66344C7119C6263500DAB27B /* Movie.swift */; };
 		666C83E819C3B2E100425F6D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666C83E719C3B2E100425F6D /* Alamofire.framework */; };
 		666C83EA19C3BA8F00425F6D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666C83E919C3BA8F00425F6D /* SwiftyJSON.framework */; };
 		666C83EE19C3C37700425F6D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666C83ED19C3C37700425F6D /* SwiftyJSON.swift */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		25BD5363EBC34567AEC56C01 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		66344C7119C6263500DAB27B /* Movies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		66344C7119C6263500DAB27B /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		666C83E719C3B2E100425F6D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		666C83E919C3BA8F00425F6D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		666C83ED19C3C37700425F6D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		66803A1C19C68C41002A2412 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				66344C7119C6263500DAB27B /* Movies.swift */,
+				66344C7119C6263500DAB27B /* Movie.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				666C83EE19C3C37700425F6D /* SwiftyJSON.swift in Sources */,
 				6695A96019C14626001C2E4B /* ViewController.swift in Sources */,
 				66803A2019C6AD2C002A2412 /* DetailViewController.swift in Sources */,
-				66344C7219C6263500DAB27B /* Movies.swift in Sources */,
+				66344C7219C6263500DAB27B /* Movie.swift in Sources */,
 				6695A95E19C14626001C2E4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,11 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Alamofire/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CineReviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

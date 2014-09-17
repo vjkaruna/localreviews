@@ -11,19 +11,20 @@ import Foundation
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var posterView: UIImageView!    
-    @IBOutlet weak var titleView: UILabel!
+    @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var synopsisView: UILabel!
     
-    var movie = Movie()
+    var movie: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        posterView.sd_setImageWithURL(NSURL(string: movie.thumbURL))
-        titleView.text = movie.title
-        synopsisView.text = movie.synopsis
+        posterView.sd_setImageWithURL(NSURL(string: movie!.posterURL))
+ 
+        synopsisView.text = movie!.synopsis
         
+        synopsisView.frame = CGRectMake(16, 0, 288, 800)
+        synopsisView.sizeToFit()
     }
     
     override func didReceiveMemoryWarning() {
