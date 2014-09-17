@@ -23,10 +23,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationItem.title = "Rotten Tomatoes"
+        
         self.tvc.tableView = movieTableView
         
         var messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
-        messageLabel.text = "No data currently available. Please pull down to refresh."
+        messageLabel.backgroundColor = UIColor.grayColor()
+        messageLabel.text = "No movies loaded. Please pull to refresh."
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = NSTextAlignment.Center
         messageLabel.sizeToFit()
@@ -66,15 +69,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("mvItemCell") as UITableViewCell
         let nameLabel: UILabel = cell.viewWithTag(102) as UILabel
         let thumbnail: UIImageView = cell.viewWithTag(101) as UIImageView
-        
-        let textFont = [NSFontAttributeName:UIFont(name: "Georgia", size: 12.0)]
-        let boldFont = [NSFontAttributeName:UIFont(name: "Georgia-Bold", size: 12.0)]
-        
+              
         if (indexPath.row < movies.count) {
-            var descText = NSMutableAttributedString()
-            descText.appendAttributedString(NSAttributedString(string: "\(movies[indexPath.row].title)\n\(movies[indexPath.row].mpaaRating)",attributes:boldFont))
-            descText.appendAttributedString(NSAttributedString(string: " \(movies[indexPath.row].synopsis)",attributes:textFont))
-            nameLabel.attributedText = descText
+            nameLabel.attributedText = movies[indexPath.row].attributedShortDesc
             thumbnail.sd_setImageWithURL(NSURL(string: movies[indexPath.row].thumbURL))            
         } else {
             nameLabel.text = "Row \(indexPath.row)"
@@ -118,6 +115,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         */
         
         netErrorLabel.hidden = true
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, url).responseJSON { (request, response, data, error) in
             if (error != nil) {
                 self.handleNetworkError("error 1")
@@ -134,10 +132,14 @@ class ViewController: UIViewController, UITableViewDataSource {
                         let synopsis = movie["synopsis"].string
                         let thumbURL = movie["posters"]["thumbnail"].string
                         let mpaaRating = movie["mpaa_rating"].string
+                        let year = movie["year"].integer
+                        let criticScore = movie["ratings"]["critics_score"].integer
+                        let audienceScore = movie["ratings"]["audience_score"].integer
                         
                         if (identifier == nil || title == nil || synopsis == nil || thumbURL == nil || mpaaRating == nil) {
-                            self.handleNetworkError("error 2")
+                            println("error 2")
                         } else {
+
                             // Check if this movie is already in the array
                             var match_movie = self.movies.filter({$0.identifier == identifier})
                             if (match_movie.count == 0) {
@@ -146,6 +148,9 @@ class ViewController: UIViewController, UITableViewDataSource {
                                 movieObj.synopsis = synopsis!
                                 movieObj.thumbURL = thumbURL!
                                 movieObj.mpaaRating = mpaaRating!
+                                movieObj.year = year
+                                movieObj.criticScore = criticScore
+                                movieObj.audienceScore = audienceScore
                                 self.movies.append(movieObj)
                             }
                         }
@@ -154,9 +159,10 @@ class ViewController: UIViewController, UITableViewDataSource {
                     self.handleNetworkError("error 3 \(json)")
             }
             for movie in self.movies {
-                println("\(movie.title)")
+                //println("\(movie.title)")
             }
             
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
             self.movieTableView.reloadData()
             self.tvc.refreshControl?.endRefreshing()
             

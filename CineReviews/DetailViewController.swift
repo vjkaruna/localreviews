@@ -19,11 +19,25 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        posterView.sd_setImageWithURL(NSURL(string: movie!.posterURL))
- 
-        synopsisView.text = movie!.synopsis
+        self.navigationItem.title = movie!.title
+        let back = UIBarButtonItem()
+        back.tintColor = UIColor.yellowColor()
+        back.title = "Movies"
+        self.navigationItem.backBarButtonItem = back
         
-        synopsisView.frame = CGRectMake(16, 0, 288, 800)
+        posterView.sd_setImageWithURL(NSURL(string: self.movie!.posterURL))
+        
+        /* Couldn't get this working in time.
+        
+        completed: {(image: UIImage?, error: NSError?, cacheType: SDImageCacheType!, imageURL: NSURL?) in
+                self.posterView.alpha = 0.0
+                UIView.animateWithDuration(2.0, animations: {() in self.posterView.alpha = 1.0})
+            })
+        */
+ 
+        synopsisView.attributedText = movie!.attributedLongDesc
+        
+        synopsisView.frame = CGRectMake(16, 20, 288, 800)
         synopsisView.sizeToFit()
     }
     
