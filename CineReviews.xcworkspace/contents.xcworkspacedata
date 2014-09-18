@@ -5,7 +5,7 @@
       location = "group:Alamofire/Alamofire.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CineReviews.xcodeproj">
+      location = "group:LocalReviews.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

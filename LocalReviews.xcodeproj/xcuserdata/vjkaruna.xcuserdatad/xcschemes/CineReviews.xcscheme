@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6695A95719C14626001C2E4B"
-               BuildableName = "CineReviews.app"
-               BlueprintName = "CineReviews"
-               ReferencedContainer = "container:CineReviews.xcodeproj">
+               BuildableName = "LocalReviews.app"
+               BlueprintName = "LocalReviews"
+               ReferencedContainer = "container:LocalReviews.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6695A96C19C14626001C2E4B"
-               BuildableName = "CineReviewsTests.xctest"
-               BlueprintName = "CineReviewsTests"
-               ReferencedContainer = "container:CineReviews.xcodeproj">
+               BuildableName = "LocalReviewsTests.xctest"
+               BlueprintName = "LocalReviewsTests"
+               ReferencedContainer = "container:LocalReviews.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6695A96C19C14626001C2E4B"
-               BuildableName = "CineReviewsTests.xctest"
-               BlueprintName = "CineReviewsTests"
-               ReferencedContainer = "container:CineReviews.xcodeproj">
+               BuildableName = "LocalReviewsTests.xctest"
+               BlueprintName = "LocalReviewsTests"
+               ReferencedContainer = "container:LocalReviews.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6695A95719C14626001C2E4B"
-            BuildableName = "CineReviews.app"
-            BlueprintName = "CineReviews"
-            ReferencedContainer = "container:CineReviews.xcodeproj">
+            BuildableName = "LocalReviews.app"
+            BlueprintName = "LocalReviews"
+            ReferencedContainer = "container:LocalReviews.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6695A95719C14626001C2E4B"
-            BuildableName = "CineReviews.app"
-            BlueprintName = "CineReviews"
-            ReferencedContainer = "container:CineReviews.xcodeproj">
+            BuildableName = "LocalReviews.app"
+            BlueprintName = "LocalReviews"
+            ReferencedContainer = "container:LocalReviews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6695A95719C14626001C2E4B"
-            BuildableName = "CineReviews.app"
-            BlueprintName = "CineReviews"
-            ReferencedContainer = "container:CineReviews.xcodeproj">
+            BuildableName = "LocalReviews.app"
+            BlueprintName = "LocalReviews"
+            ReferencedContainer = "container:LocalReviews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -18,7 +18,7 @@
 		6695A96319C14626001C2E4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695A96119C14626001C2E4B /* Main.storyboard */; };
 		6695A96519C14626001C2E4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695A96419C14626001C2E4B /* Images.xcassets */; };
 		6695A96819C14626001C2E4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6695A96619C14626001C2E4B /* LaunchScreen.xib */; };
-		6695A97419C14626001C2E4B /* CineReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695A97319C14626001C2E4B /* CineReviewsTests.swift */; };
+		6695A97419C14626001C2E4B /* LocalReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695A97319C14626001C2E4B /* LocalReviewsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,18 +37,18 @@
 		666C83E719C3B2E100425F6D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		666C83E919C3BA8F00425F6D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		666C83ED19C3C37700425F6D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
-		666C83EF19C3D28500425F6D /* CineReviews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CineReviews-Bridging-Header.h"; sourceTree = "<group>"; };
+		666C83EF19C3D28500425F6D /* LocalReviews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalReviews-Bridging-Header.h"; sourceTree = "<group>"; };
 		66803A1F19C6AD2C002A2412 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		6695A95819C14626001C2E4B /* CineReviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineReviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6695A95819C14626001C2E4B /* LocalReviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalReviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695A95C19C14626001C2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6695A95D19C14626001C2E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6695A95F19C14626001C2E4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6695A96219C14626001C2E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6695A96419C14626001C2E4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6695A96719C14626001C2E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6695A96D19C14626001C2E4B /* CineReviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CineReviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6695A96D19C14626001C2E4B /* LocalReviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalReviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695A97219C14626001C2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6695A97319C14626001C2E4B /* CineReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineReviewsTests.swift; sourceTree = "<group>"; };
+		6695A97319C14626001C2E4B /* LocalReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalReviewsTests.swift; sourceTree = "<group>"; };
 		CBF9B6DA08924C01A7FB89CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,8 +115,8 @@
 		6695A94F19C14626001C2E4B = {
 			isa = PBXGroup;
 			children = (
-				6695A95A19C14626001C2E4B /* CineReviews */,
-				6695A97019C14626001C2E4B /* CineReviewsTests */,
+				6695A95A19C14626001C2E4B /* LocalReviews */,
+				6695A97019C14626001C2E4B /* LocalReviewsTests */,
 				6695A95919C14626001C2E4B /* Products */,
 				25BD5363EBC34567AEC56C01 /* Pods.xcconfig */,
 				59D81A3C6DAF42098AC03844 /* Frameworks */,
@@ -126,21 +126,22 @@
 		6695A95919C14626001C2E4B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6695A95819C14626001C2E4B /* CineReviews.app */,
-				6695A96D19C14626001C2E4B /* CineReviewsTests.xctest */,
+				6695A95819C14626001C2E4B /* LocalReviews.app */,
+				6695A96D19C14626001C2E4B /* LocalReviewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6695A95A19C14626001C2E4B /* CineReviews */ = {
+		6695A95A19C14626001C2E4B /* LocalReviews */ = {
 			isa = PBXGroup;
 			children = (
 				66803A1E19C68C73002A2412 /* Views */,
 				66803A1D19C68C50002A2412 /* Controllers */,
 				66803A1C19C68C41002A2412 /* Models */,
 				6695A95B19C14626001C2E4B /* Supporting Files */,
-				666C83EF19C3D28500425F6D /* CineReviews-Bridging-Header.h */,
+				666C83EF19C3D28500425F6D /* LocalReviews-Bridging-Header.h */,
 			);
+			name = LocalReviews;
 			path = CineReviews;
 			sourceTree = "<group>";
 		};
@@ -152,12 +153,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6695A97019C14626001C2E4B /* CineReviewsTests */ = {
+		6695A97019C14626001C2E4B /* LocalReviewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				6695A97319C14626001C2E4B /* CineReviewsTests.swift */,
+				6695A97319C14626001C2E4B /* LocalReviewsTests.swift */,
 				6695A97119C14626001C2E4B /* Supporting Files */,
 			);
+			name = LocalReviewsTests;
 			path = CineReviewsTests;
 			sourceTree = "<group>";
 		};
@@ -172,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6695A95719C14626001C2E4B /* CineReviews */ = {
+		6695A95719C14626001C2E4B /* LocalReviews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6695A97719C14626001C2E4B /* Build configuration list for PBXNativeTarget "CineReviews" */;
+			buildConfigurationList = 6695A97719C14626001C2E4B /* Build configuration list for PBXNativeTarget "LocalReviews" */;
 			buildPhases = (
 				F535B93242F34D2480E7613A /* Check Pods Manifest.lock */,
 				6695A95419C14626001C2E4B /* Sources */,
@@ -186,14 +188,14 @@
 			);
 			dependencies = (
 			);
-			name = CineReviews;
+			name = LocalReviews;
 			productName = CineReviews;
-			productReference = 6695A95819C14626001C2E4B /* CineReviews.app */;
+			productReference = 6695A95819C14626001C2E4B /* LocalReviews.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6695A96C19C14626001C2E4B /* CineReviewsTests */ = {
+		6695A96C19C14626001C2E4B /* LocalReviewsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6695A97A19C14626001C2E4B /* Build configuration list for PBXNativeTarget "CineReviewsTests" */;
+			buildConfigurationList = 6695A97A19C14626001C2E4B /* Build configuration list for PBXNativeTarget "LocalReviewsTests" */;
 			buildPhases = (
 				6695A96919C14626001C2E4B /* Sources */,
 				6695A96A19C14626001C2E4B /* Frameworks */,
@@ -204,9 +206,9 @@
 			dependencies = (
 				6695A96F19C14626001C2E4B /* PBXTargetDependency */,
 			);
-			name = CineReviewsTests;
+			name = LocalReviewsTests;
 			productName = CineReviewsTests;
-			productReference = 6695A96D19C14626001C2E4B /* CineReviewsTests.xctest */;
+			productReference = 6695A96D19C14626001C2E4B /* LocalReviewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6695A95319C14626001C2E4B /* Build configuration list for PBXProject "CineReviews" */;
+			buildConfigurationList = 6695A95319C14626001C2E4B /* Build configuration list for PBXProject "LocalReviews" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,8 +242,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6695A95719C14626001C2E4B /* CineReviews */,
-				6695A96C19C14626001C2E4B /* CineReviewsTests */,
+				6695A95719C14626001C2E4B /* LocalReviews */,
+				6695A96C19C14626001C2E4B /* LocalReviewsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,7 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6695A97419C14626001C2E4B /* CineReviewsTests.swift in Sources */,
+				6695A97419C14626001C2E4B /* LocalReviewsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +327,7 @@
 /* Begin PBXTargetDependency section */
 		6695A96F19C14626001C2E4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6695A95719C14626001C2E4B /* CineReviews */;
+			target = 6695A95719C14626001C2E4B /* LocalReviews */;
 			targetProxy = 6695A96E19C14626001C2E4B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -436,7 +438,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CineReviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocalReviews;
 				SWIFT_OBJC_BRIDGING_HEADER = "CineReviews/CineReviews-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -455,7 +457,7 @@
 				);
 				INFOPLIST_FILE = CineReviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocalReviews;
 				SWIFT_OBJC_BRIDGING_HEADER = "CineReviews/CineReviews-Bridging-Header.h";
 			};
 			name = Release;
@@ -474,7 +476,7 @@
 				);
 				INFOPLIST_FILE = CineReviewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocalReviewsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CineReviews.app/CineReviews";
 			};
 			name = Debug;
@@ -489,7 +491,7 @@
 				);
 				INFOPLIST_FILE = CineReviewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LocalReviewsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CineReviews.app/CineReviews";
 			};
 			name = Release;
@@ -497,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6695A95319C14626001C2E4B /* Build configuration list for PBXProject "CineReviews" */ = {
+		6695A95319C14626001C2E4B /* Build configuration list for PBXProject "LocalReviews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6695A97519C14626001C2E4B /* Debug */,
@@ -506,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6695A97719C14626001C2E4B /* Build configuration list for PBXNativeTarget "CineReviews" */ = {
+		6695A97719C14626001C2E4B /* Build configuration list for PBXNativeTarget "LocalReviews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6695A97819C14626001C2E4B /* Debug */,
@@ -515,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6695A97A19C14626001C2E4B /* Build configuration list for PBXNativeTarget "CineReviewsTests" */ = {
+		6695A97A19C14626001C2E4B /* Build configuration list for PBXNativeTarget "LocalReviewsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6695A97B19C14626001C2E4B /* Debug */,
