@@ -40,7 +40,7 @@
 		666C83EF19C3D28500425F6D /* LocalReviews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalReviews-Bridging-Header.h"; sourceTree = "<group>"; };
 		66803A1F19C6AD2C002A2412 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6695A95819C14626001C2E4B /* LocalReviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalReviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6695A95C19C14626001C2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6695A95C19C14626001C2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6695A95D19C14626001C2E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6695A95F19C14626001C2E4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6695A96219C14626001C2E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,8 +141,7 @@
 				6695A95B19C14626001C2E4B /* Supporting Files */,
 				666C83EF19C3D28500425F6D /* LocalReviews-Bridging-Header.h */,
 			);
-			name = LocalReviews;
-			path = CineReviews;
+			path = LocalReviews;
 			sourceTree = "<group>";
 		};
 		6695A95B19C14626001C2E4B /* Supporting Files */ = {
@@ -159,8 +158,7 @@
 				6695A97319C14626001C2E4B /* LocalReviewsTests.swift */,
 				6695A97119C14626001C2E4B /* Supporting Files */,
 			);
-			name = LocalReviewsTests;
-			path = CineReviewsTests;
+			path = LocalReviewsTests;
 			sourceTree = "<group>";
 		};
 		6695A97119C14626001C2E4B /* Supporting Files */ = {
@@ -436,10 +434,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = CineReviews/Info.plist;
+				INFOPLIST_FILE = LocalReviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = LocalReviews;
-				SWIFT_OBJC_BRIDGING_HEADER = "CineReviews/CineReviews-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocalReviews/LocalReviews-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -455,10 +453,10 @@
 					"$(PROJECT_DIR)/Alamofire/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/SwiftyJSON/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = CineReviews/Info.plist;
+				INFOPLIST_FILE = LocalReviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = LocalReviews;
-				SWIFT_OBJC_BRIDGING_HEADER = "CineReviews/CineReviews-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocalReviews/LocalReviews-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -474,25 +472,25 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CineReviewsTests/Info.plist;
+				INFOPLIST_FILE = LocalReviewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = LocalReviewsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CineReviews.app/CineReviews";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalReviews.app/LocalReviews";
 			};
 			name = Debug;
 		};
 		6695A97C19C14626001C2E4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "build/Release-iphoneos/LocalReviews.app/LocalReviews";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CineReviewsTests/Info.plist;
+				INFOPLIST_FILE = LocalReviewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = LocalReviewsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CineReviews.app/CineReviews";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalReviews.app/LocalReviews";
 			};
 			name = Release;
 		};
