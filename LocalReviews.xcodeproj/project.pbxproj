@@ -19,6 +19,7 @@
 		6695A96519C14626001C2E4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695A96419C14626001C2E4B /* Images.xcassets */; };
 		6695A96819C14626001C2E4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6695A96619C14626001C2E4B /* LaunchScreen.xib */; };
 		6695A97419C14626001C2E4B /* LocalReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695A97319C14626001C2E4B /* LocalReviewsTests.swift */; };
+		66DCF06519CD14E200F0A58C /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DCF06419CD14E200F0A58C /* LocalService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6695A96D19C14626001C2E4B /* LocalReviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalReviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695A97219C14626001C2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6695A97319C14626001C2E4B /* LocalReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalReviewsTests.swift; sourceTree = "<group>"; };
+		66DCF06419CD14E200F0A58C /* LocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		CBF9B6DA08924C01A7FB89CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				66344C7119C6263500DAB27B /* Movie.swift */,
+				66DCF06419CD14E200F0A58C /* LocalService.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				66803A2019C6AD2C002A2412 /* DetailViewController.swift in Sources */,
 				66344C7219C6263500DAB27B /* Movie.swift in Sources */,
 				6695A95E19C14626001C2E4B /* AppDelegate.swift in Sources */,
+				66DCF06519CD14E200F0A58C /* LocalService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
