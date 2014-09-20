@@ -19,6 +19,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     var movies = [Movie]()
     var tvc = UITableViewController()
     
+    var yelpConsumerKey = "IegkwdVJdoKBK20pl4Zvsg"
+    var yelpConsumerSecret = "EmpvxB9tE7Thd-fbSR85VxwxQZU"
+    var yelpToken = "73vhsz8OPMjUMrTEP612vDliRmHH-TaS"
+    var yelpTokenSecret = "vFmFp_QcFIMqExdYo_G6SSZCDQc"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -94,8 +99,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     func requestAPIData() {
         
         
-        
-        var url: String = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=mkwnbrc7g34k64vpq96nshc9"
+        var url: String = ""
+        // var url: String = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=mkwnbrc7g34k64vpq96nshc9"
         
         /* Port of the Obj-C example from @sandofsy -
             switched to the Alamofire code below

@@ -22,11 +22,11 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../Alamofire/</string>
+		<string>../Alamofire</string>
 		<key>B068B79124E8CB4EB93A5B60233E4E414E06ED25</key>
 		<string>..</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
-		<string>../SwiftyJSON/</string>
+		<string>../SwiftyJSON</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:vjkaruna/localreviews.git</string>
