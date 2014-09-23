@@ -16,19 +16,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var netErrorLabel: UILabel!
     @IBOutlet weak var movieTableView: UITableView!
     
-    var movies = [Movie]()
+    var places = [Place]()
     var tvc = UITableViewController()
     
     var yelpConsumerKey = "IegkwdVJdoKBK20pl4Zvsg"
     var yelpConsumerSecret = "EmpvxB9tE7Thd-fbSR85VxwxQZU"
     var yelpToken = "73vhsz8OPMjUMrTEP612vDliRmHH-TaS"
     var yelpTokenSecret = "vFmFp_QcFIMqExdYo_G6SSZCDQc"
+    var localService: LocalService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationItem.title = "Rotten Tomatoes"
+        self.navigationItem.title = "Yelp"
         
         self.tvc.tableView = movieTableView
         
@@ -40,12 +41,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         messageLabel.sizeToFit()
         
         self.movieTableView.backgroundView = messageLabel
+        self.movieTableView.estimatedRowHeight = 100.0;
+        self.movieTableView.rowHeight = UITableViewAutomaticDimension;
         
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("requestAPIData"), forControlEvents: UIControlEvents.ValueChanged)
         self.tvc.refreshControl = refreshControl
         
-        requestAPIData()
+        localService = LocalService(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
+        
+        //localService?.searchWithTerm("thai", success: {(req,err) in println("\(req) \(err)")} , failure: {(req,err) in println("\(req) \(err)")} )
+        localService?.setDataHandler({(places) in
+            self.places = places
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            self.movieTableView.reloadData()
+            self.tvc.refreshControl?.endRefreshing()
+        })
+        localService?.searchWithTerm("thai", success: localService?.unwrapPlacesJSON, failure: {(req,err) in println("\(req) \(err)")} )
         
 
     }
@@ -56,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if (movies.count > 0) {
+        if (places.count > 0) {
             self.movieTableView.backgroundView!.hidden = true
             return 1
         } else {
@@ -66,8 +78,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return places.count
     }
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = UITableViewCell(style: .Default, reuseIdentifier: "")
@@ -75,9 +89,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         let nameLabel: UILabel = cell.viewWithTag(102) as UILabel
         let thumbnail: UIImageView = cell.viewWithTag(101) as UIImageView
               
-        if (indexPath.row < movies.count) {
-            nameLabel.attributedText = movies[indexPath.row].attributedShortDesc
-            thumbnail.sd_setImageWithURL(NSURL(string: movies[indexPath.row].thumbURL))            
+        if (indexPath.row < places.count) {
+            //nameLabel.attributedText = places[indexPath.row].title
+            nameLabel.text = places[indexPath.row].title
+            thumbnail.sd_setImageWithURL(NSURL(string: places[indexPath.row].thumbURL))
         } else {
             nameLabel.text = "Row \(indexPath.row)"
         }
@@ -91,10 +106,11 @@ class ViewController: UIViewController, UITableViewDataSource {
             let dvc = segue.destinationViewController as DetailViewController
             let sourcerow = self.movieTableView.indexPathForSelectedRow()?.row
             if (sourcerow != nil) {
-                dvc.movie = movies[sourcerow!]
+                // dvc.place = places[sourcerow!]
             }
         }
     }
+    
     
     func requestAPIData() {
         
@@ -102,22 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         var url: String = ""
         // var url: String = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=mkwnbrc7g34k64vpq96nshc9"
         
-        /* Port of the Obj-C example from @sandofsy -
-            switched to the Alamofire code below
-        
-            var request = NSMutableURLRequest(URL: NSURL(string: url))
-            request.setValue("application/json",forHTTPHeaderField:"Accept")
-            request.HTTPMethod = "GET"
-            request.setValue("curl/7.37.1", forHTTPHeaderField:"User-Agent")
-        
-            println("\(request)")
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-                println("\(error)")
-                var object: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0) , error: nil)
-                println("\(object)")
-                })
-        
-        */
+        /*
         
         netErrorLabel.hidden = true
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -172,6 +173,8 @@ class ViewController: UIViewController, UITableViewDataSource {
             self.tvc.refreshControl?.endRefreshing()
             
         }
+
+        */
     }
     
     func handleNetworkError(description: String) {

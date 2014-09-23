@@ -14,18 +14,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var synopsisView: UILabel!
     
-    var movie: Movie?
+    var place: Place?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = movie!.title
+        self.navigationItem.title = place!.title
         let back = UIBarButtonItem()
         back.tintColor = UIColor.yellowColor()
         back.title = "Movies"
         self.navigationItem.backBarButtonItem = back
         
-        posterView.sd_setImageWithURL(NSURL(string: self.movie!.posterURL))
+        posterView.sd_setImageWithURL(NSURL(string: self.place!.thumbURL))
         
         /* Couldn't get this working in time.
         
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
             })
         */
  
-        synopsisView.attributedText = movie!.attributedLongDesc
+        synopsisView.attributedText = place!.attributedLongDesc
         
         synopsisView.frame = CGRectMake(16, 20, 288, 800)
         synopsisView.sizeToFit()
