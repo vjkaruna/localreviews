@@ -14,12 +14,14 @@ class LocalService: BDBOAuth1RequestOperationManager {
     var dataHandler: (([Place]) -> ())?
     var is_searching = false
     var pending_term = ""
+    var sett: FilterSettings?
     
-    init(consumerKey key: String!, consumerSecret secret: String!, accessToken token: String!, accessSecret tokenSecret: String!) {
+    init(consumerKey key: String!, consumerSecret secret: String!, accessToken token: String!, accessSecret tokenSecret: String!, sett: FilterSettings) {
         var baseURL = NSURL(string: "http://api.yelp.com/v2/")
         super.init(baseURL:baseURL, consumerKey:key, consumerSecret:secret)
         var actoken = BDBOAuthToken(token: token, secret: tokenSecret, expiration: nil)
         self.requestSerializer.saveAccessToken(actoken)
+        self.sett = sett
     }
     
     func setDataHandler( dataHandler: (([Place]) -> ())) {
@@ -34,7 +36,7 @@ class LocalService: BDBOAuth1RequestOperationManager {
         if (self.is_searching == false && term != "") {
             self.is_searching = true
             println("requesting \(term)")
-            var params = ["term":term, "location":"San Francisco"] as NSDictionary
+            var params = ["term":term, "location":"San Francisco", "sort": self.sett!.sort, "categories_filter": self.sett!.categoriesString, "radius_filter": self.sett!.distance, "deals_filter": self.sett!.deal] as NSDictionary
             return self.GET("search", parameters: params, success: success, failure: failure)
         } else {
             self.pending_term = term

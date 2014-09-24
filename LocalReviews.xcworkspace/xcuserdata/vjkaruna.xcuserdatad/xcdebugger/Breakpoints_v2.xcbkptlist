@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LocalReviews/LocalService.swift"
-            timestampString = "433210010.171015"
+            timestampString = "433225123.796156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "init(consumerKey:consumerSecret:accessToken:accessSecret:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(consumerKey:consumerSecret:accessToken:accessSecret:sett:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LocalReviews/LocalService.swift"
-            timestampString = "433210010.171015"
+            timestampString = "433225123.796156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "init(coder:)"
             landmarkType = "5">
             <Locations>
@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LocalReviews/LocalService.swift"
-            timestampString = "433210475.405994"
+            timestampString = "433225123.796156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "unwrapPlacesJSON(_:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -102,13 +102,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LocalReviews/FilterSettings.swift"
-            timestampString = "433208781.969165"
+            timestampString = "433226294.469352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "FilterSettings"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LocalReviews/FilterSettings.swift"
+            timestampString = "433225684.267655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "FilterSettings"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LocalReviews.FilterSettings.init (LocalReviews.FilterSettings.Type)() -&gt; LocalReviews.FilterSettings"
+                  moduleName = "LocalReviews"
+                  urlString = "file:///Users/vjkaruna/localreviews/LocalReviews/FilterSettings.swift"
+                  timestampString = "433225684.449846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LocalReviews.FilterSettings.sortTitles.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "LocalReviews"
+                  urlString = "file:///Users/vjkaruna/localreviews/LocalReviews/FilterSettings.swift"
+                  timestampString = "433225684.452642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -10,18 +10,45 @@ import Foundation
 
 class FilterSettings {
     
-    var categories = [String]()
-    var distance = "1"
+    let categories = Categories().catList
+    var categoriesSelected = [Bool]()
+    var distance = 10000
     var sort = 0
+    var deal = 0
 
-    var sortMap = ["Best Match": 0, "Distance": 1, "Highest Rated": 2]
-    var sortTitles = [String]()
+    let sortTitles = ["Best Match", "Distance", "Highest Rated"]
     
     var searchTerm = "Thai"
     
+    var categoryCount = 0
+    
     init() {
-        self.sortTitles = Array(sortMap.keys)
+        
+        self.categoryCount = self.categories.count
+        for category in self.categories {
+            self.categoriesSelected.append(false)
+        }
     }
+    
+    lazy var categoriesString: String = {
+            var cats = ""
+            var iter = 0
+            for catpair in self.categories {
+              if (self.categoriesSelected[iter]) {
+                var new_categories = ""
+                if (iter > 0) {
+                    new_categories = "\(cats), \((catpair)[1])"
+                } else {
+                    new_categories = "\((catpair)[1])"
+                }
+                iter += 1
+                cats = new_categories
+                }
+            }
+            return cats
+        
+    }()
+    
     
     
 }

@@ -51,7 +51,11 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         refreshControl.addTarget(self, action: Selector("requestAPIData"), forControlEvents: UIControlEvents.ValueChanged)
         self.tvc.refreshControl = refreshControl
         
-        localService = LocalService(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        localService = LocalService(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret, sett: self.filterSettings)
         
         //localService?.searchWithTerm("thai", success: {(req,err) in println("\(req) \(err)")} , failure: {(req,err) in println("\(req) \(err)")} )
         localService?.setDataHandler({(places) in
@@ -129,10 +133,11 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
                  dvc.place = places[sourcerow!]
             }
         } else if (segue.identifier == "filterSegue") {
-            
+            let fvc = segue.destinationViewController as FilterViewController
+            fvc.sett = filterSettings
         }
     }
-    
+        
     
     func requestAPIData() {
         
