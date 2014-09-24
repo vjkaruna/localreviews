@@ -12,7 +12,16 @@ class FilterSettings {
     
     var categories = [String]()
     var distance = "1"
-    var sort = "Best Match"
+    var sort = 0
+
+    var sortMap = ["Best Match": 0, "Distance": 1, "Highest Rated": 2]
+    var sortTitles = [String]()
+    
+    var searchTerm = "Thai"
+    
+    init() {
+        self.sortTitles = Array(sortMap.keys)
+    }
     
     
 }

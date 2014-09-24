@@ -14,11 +14,12 @@ class Place {
     var identifier: String = ""
     
     // metadata
-    var title: String = ""
-    var streetAddress: String = ""
-    var thumbURL: String = ""
-    var categories = [String]()
-    var ratingImgUrl: String = ""
+    var title = ""
+    var streetAddress = ""
+    var thumbURL = ""
+    var categories = ""
+    var ratingImgURL = ""
+    var ratingCount = 0
     
 
     
@@ -26,10 +27,6 @@ class Place {
         self.identifier = identifier
         
     }
-    
-    lazy var posterURL: String = {
-        return self.thumbURL.stringByReplacingOccurrencesOfString("tmb", withString: "ori")
-    }()
 
     
     lazy var attributedLongDesc: NSMutableAttributedString = {

@@ -11,7 +11,7 @@ import Alamofire
 
 
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var netErrorLabel: UILabel!
     @IBOutlet weak var movieTableView: UITableView!
@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     var yelpTokenSecret = "vFmFp_QcFIMqExdYo_G6SSZCDQc"
     var localService: LocalService?
     
+    var filterSettings = FilterSettings()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,8 +36,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.tvc.tableView = movieTableView
         
         var messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
-        messageLabel.backgroundColor = UIColor.grayColor()
-        messageLabel.text = "No movies loaded. Please pull to refresh."
+        messageLabel.backgroundColor = UIColor.whiteColor()
+        messageLabel.text = "No reviews loaded. Please pull to refresh."
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = NSTextAlignment.Center
         messageLabel.sizeToFit()
@@ -43,6 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.movieTableView.backgroundView = messageLabel
         self.movieTableView.estimatedRowHeight = 100.0;
         self.movieTableView.rowHeight = UITableViewAutomaticDimension;
+
         
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("requestAPIData"), forControlEvents: UIControlEvents.ValueChanged)
@@ -57,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             self.movieTableView.reloadData()
             self.tvc.refreshControl?.endRefreshing()
         })
-        localService?.searchWithTerm("thai", success: localService?.unwrapPlacesJSON, failure: {(req,err) in println("\(req) \(err)")} )
+        localService?.searchWithTerm(filterSettings.searchTerm, success: localService?.unwrapPlacesJSON, failure: {(req,err) in println("\(req) \(err)")} )
         
 
     }
@@ -85,14 +88,31 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = UITableViewCell(style: .Default, reuseIdentifier: "")
-        let cell = tableView.dequeueReusableCellWithIdentifier("mvItemCell") as UITableViewCell
-        let nameLabel: UILabel = cell.viewWithTag(102) as UILabel
+        let opcell = tableView.dequeueReusableCellWithIdentifier("mvItemCell") as UITableViewCell?
+        if (opcell == nil) {
+            println("couldn't get reusable cell")
+            return UITableViewCell()
+        }
+        var cell = opcell!
         let thumbnail: UIImageView = cell.viewWithTag(101) as UIImageView
+        let nameLabel: UILabel = cell.viewWithTag(102) as UILabel
+        let ratingImg: UIImageView = cell.viewWithTag(103) as UIImageView
+        let ratingLabel: UILabel = cell.viewWithTag(104) as UILabel
+        let categories: UILabel = cell.viewWithTag(105) as UILabel
+        let streetAddress: UILabel = cell.viewWithTag(106) as UILabel
               
         if (indexPath.row < places.count) {
             //nameLabel.attributedText = places[indexPath.row].title
             nameLabel.text = places[indexPath.row].title
             thumbnail.sd_setImageWithURL(NSURL(string: places[indexPath.row].thumbURL))
+            ratingImg.sd_setImageWithURL(NSURL(string: places[indexPath.row].ratingImgURL))
+            if (places[indexPath.row].ratingCount < 100) {
+                ratingLabel.text = "\(places[indexPath.row].ratingCount) ratings"
+            } else {
+                ratingLabel.text = "\(places[indexPath.row].ratingCount)"
+            }
+            categories.text = places[indexPath.row].categories
+            streetAddress.text = places[indexPath.row].streetAddress
         } else {
             nameLabel.text = "Row \(indexPath.row)"
         }
@@ -106,8 +126,10 @@ class ViewController: UIViewController, UITableViewDataSource {
             let dvc = segue.destinationViewController as DetailViewController
             let sourcerow = self.movieTableView.indexPathForSelectedRow()?.row
             if (sourcerow != nil) {
-                // dvc.place = places[sourcerow!]
+                 dvc.place = places[sourcerow!]
             }
+        } else if (segue.identifier == "filterSegue") {
+            
         }
     }
     
@@ -180,6 +202,31 @@ class ViewController: UIViewController, UITableViewDataSource {
     func handleNetworkError(description: String) {
         println("Network error \(description)")
         netErrorLabel.hidden = false
+    }
+    
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        if (searchString == "") {
+            filterSettings.searchTerm = ""
+            places.removeAll(keepCapacity: true)
+            return true
+        } else {
+            filterSettings.searchTerm = searchString
+            println("Searching \(searchString)")
+            self.localService?.searchWithTerm(filterSettings.searchTerm, success: localService?.unwrapPlacesJSON, failure: {(req,err) in self.handleNetworkError(("\(req) \(err)"))} )
+            return true
+        }
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText == "") {
+            filterSettings.searchTerm = ""
+            places.removeAll(keepCapacity: true)
+        } else {
+            filterSettings.searchTerm = searchText
+            println("Searching \(searchText)")
+            self.localService?.searchWithTerm(filterSettings.searchTerm, success: localService?.unwrapPlacesJSON, failure: {(req,err) in self.handleNetworkError(("\(req) \(err)"))} )
+        }
     }
     
 }
